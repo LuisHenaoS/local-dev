@@ -1,9 +1,12 @@
 import os
 
+
 class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY", "your_secret_key")
     # usaremos SQLite en un archivo local
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URI", "sqlite:///dev_database.db")
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
+        "DATABASE_URI", "sqlite:///dev_database.db"
+    )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
@@ -24,5 +27,5 @@ class TestingConfig(Config):
 config_dict = {
     "development": DevelopmentConfig,
     "production": ProductionConfig,
-    "testing": TestingConfig
+    "testing": TestingConfig,
 }

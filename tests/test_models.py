@@ -1,5 +1,6 @@
 def test_create_data(init_database):
     from app.models import Data
+
     db = init_database
 
     data_item = Data(name="TestInSQLite")
