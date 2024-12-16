@@ -2,7 +2,7 @@ DOCKER_COMPOSE = docker-compose
 APP_SERVICE = app
 APP_CONTAINER = dev_app_sqlite
 COVERAGE_SERVICE = coverage_runner
-COVERAGE_PORT = 8080
+COVERAGE_PORT = 8090
 COVERAGE_URL = http://localhost:$(COVERAGE_PORT)
 
 # targets
@@ -28,7 +28,7 @@ test:
 	@echo "file generada /app/htmlcov dentro del contenedor coverage_runner"
 
 
-# coverage_runner en modo server para servir la carpeta htmlcov en localhost:8000
+# coverage_runner en modo server para servir la carpeta htmlcov en localhost:8090
 # plantilla generada en: https://textik.com/#a7e646edc878ae5c
 
 coverage:
