@@ -1,0 +1,34 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dev:1.0
+    container_name: dev_app_sqlite
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - DATABASE_URI=sqlite:///dev_database.db
+    networks:
+      - dev_network
+
+  coverage_runner:
+    image: dev:1.0
+    container_name: coverage_runner
+    environment:
+      - FLASK_ENV=testing
+      - PYTHONPATH=/app
+    command: /bin/bash -c "python -m http.server 8080 --directory /app/htmlcov"
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8080:8080"
+    networks:
+      - dev_network
+    depends_on:
+      - app
+
+networks:
+  dev_network:
+    driver: bridge
