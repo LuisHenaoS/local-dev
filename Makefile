@@ -50,3 +50,4 @@ clear: stop
 	$(DOCKER_COMPOSE) down --volumes --remove-orphans
 	rm -rf htmlcov
 	@echo "Se eliminaron contenedores e informes de coverage."
+
