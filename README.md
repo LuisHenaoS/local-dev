@@ -11,20 +11,28 @@ En este proyecto, la arquitectura local se apoya principalmente en Docker. La ap
 
 - **Flask app**
 
+
+
 Monta el código fuente dentro de un contenedor Docker, permitiendo iterar y probar sin tener que hacer builds de la imagen en cada cambio.
 Maneja la lógica principal de la aplicación web.
 
 - **SQLite DB**
+
+
 
 Para este entorno de desarrollo y pruebas, se ha optado por SQLite, lo cual simplifica la configuración (no requiere un contenedor adicional para la DB).
 Permite pruebas unitarias sin overhead de instalación.
 
 - **Tests automáticos**
 
+
+
 Dentro de la carpeta tests/, se definen pruebas que pueden ejecutarse localmente con pytest.
 Al finalizar, se genera un reporte de coverage para revisar la calidad de nuestro código.
 
 - **Tecnologías usadas:**
+
+
 
 - Flask como framework web en Python.
 - SQLite para persistencia mínima local.
@@ -44,13 +52,20 @@ cd local-dev
 ```
 
 - Se dispone de un makefile que te proporciona ayuda. Usa:
+
+
+
 ```bash
 make help
 ```
 
 Te saldrá:
+
+
 ![Imagen make help](source/1.png)
 
+
+---
 
 
 - Luego Levanta la aplicación
@@ -80,14 +95,19 @@ make coverage
 
 ![make coverage](source/2.png)
 
+---
+
+
 Abre el archivo htmlcov/index.html en el navegador para ver los porcentajes de cobertura.
 
+![make coverage](source/3.png)
 
-Parar los servicios y limpiar
+---
+
 Para detener la aplicación y limpiar volúmenes o archivos temporales, se puede usar:
 
 ```bash
-make clean
+make clear
 ```
 
 Esto eliminará contenedores, redes y cualquier residuo del entorno local.
@@ -96,4 +116,5 @@ Esto eliminará contenedores, redes y cualquier residuo del entorno local.
 6. **Modelo de colaboración (Gitflow)**
 
 main: Rama principal, siempre en estado estable.
-develop: Rama donde se integran las nuevas características.
+
+Develop: Rama donde se integran las nuevas características.

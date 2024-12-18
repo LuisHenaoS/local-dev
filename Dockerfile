@@ -7,7 +7,6 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONPATH=/app
 
 RUN apt-get update && apt-get install -y \
-    netcat-traditional \
     sqlite3 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*

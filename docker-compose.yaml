@@ -19,7 +19,7 @@ services:
     environment:
       - FLASK_ENV=testing
       - PYTHONPATH=/app
-    command: /bin/bash -c "python -m http.server 8080 --directory /app/htmlcov"
+    command: /bin/bash -c "python -m http.server 8090 --directory /app/htmlcov"
     volumes:
       - .:/usr/src/app
     ports:
