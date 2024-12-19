@@ -76,7 +76,7 @@ bastar con usar:
 ```bash
 make dev
 ```
-    Al cabo de unos segundos, la aplicación Flask quedará expuesta en el puerto 5000 (definida en la configuración).
+Al cabo de unos segundos, la aplicación Flask quedará expuesta en el puerto 5000 (definida en la configuración).
 Nota: El uso de SQLite simplifica el arranque. No hay necesidad de un contenedor independiente para la base de datos.
 
 **Ejecución de los Tests**
